@@ -1,0 +1,29 @@
+input:
+    name: simulation.SimulationDataloaderFactory
+    train_size: 1000
+    train_batch_size: 25
+
+    val_size: 2
+    val_batch_size: 25
+
+    test_size: 5
+    test_batch_size: 25
+
+model:
+    name: resnetunet.ResnetUnet18
+    state: # out/model/model_0.11.pth
+    n_class: 6
+
+trainer:
+    name: train1.Train1
+    num_epochs: 10
+    lr: 1e-3
+
+inferencer:
+    name: inf1.Inf1
+    print_inf_num: 4
+
+output:
+    print_folder: out/print/
+    model_folder: out/model/
+
